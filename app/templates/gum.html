@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block additionalScripts%}
+{% endblock %}
+
+{% block tabName -%}
+gum
+{%- endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="col-12">
+		<h4>GUM (Girls' Ultimate Movement)</h4>
+	</div>
+</div>
+<div class="row justify-content-center align-items-center">
+	<div class="col-5 col-centered">
+		<img class="fill" src="{{ url_for('static', filename='images/gumLogo.png') }}" />
+	</div>
+</div>
+	<div class="col-12">
+		<p>Case Western Reserve University is hosting an ALL GIRLS ultimate frisbee clinic for all ages! If you can hold a disc, we want you to come out and learn to play the sport we all play and love! No experience required.
+		</p>
+		<p>The clinic will take place on ???, at ??? on DiSanto Field (???), the CWRU turf athletic field on campus!
+		DiSanto Field Address:
+		1747 East 118th Street
+		Cleveland, OH 44106
+		</p>
+		<p>For more information from G.U.M., please visit <a href="http://gum.usaultimate.org">gum.usaultimate.org</a>
+		</p>
+	</div>
+</div>
+{% endblock %}
