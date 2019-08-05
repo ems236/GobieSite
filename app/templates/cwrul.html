@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block additionalScripts%}
+{% endblock %}
+
+{% block tabName -%}
+tournaments
+{%- endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+	<div class="col-6 col-centered">
+		<h2>CWRUL Memorial Tournament - Spring 2019</h2>
+		<img class="fit" src="{{ url_for('static', filename='images/cwrulLogo.png') }}" />
+	</div>
+</div>
+<div class="row">
+	<div class="col-12">
+		<div>The 7th edition of the CWRUL Memorial tournament will be hosted on March 23rd-24th at Kilbourne Run Sports Park in Columbus, OH.</div>
+		<div>&nbsp;</div>
+		<div>CWRUL 2019, in partnership with Oshadega, will be USAU sanctioned and will be a part of the college regular season. We will be hosting 28 men's teams and 20 women's teams this year. The team list is shown below.</div>
+		<div>&nbsp;</div>
+		<div>CWRUL will again be hosted at Kilbourne Run Sports Park, with Nafzger Park reserved as a backup field in the event of poor weather. In addition to this, you can expect the usual amenities including lined fields, an athletic trainer, tournament food, water, prizes, merchandise, and so much more.&nbsp;</div>
+		<div>&nbsp;</div>
+		<div>Where: Kilbourne Run Sports Park, Columbus, OH (<a href="https://goo.gl/maps/2EBWwo1MdH82" aria-invalid="true">https://goo.gl/maps/2EBWwo1MdH82</a>)</div>
+		<div>&nbsp;</div>
+		<div>When: March 23rd-24th 2019</div>
+		<div>&nbsp;</div>
+		<div>For any questions/comments, contact Sophia, Ben, and Quinn at cwrultds@gmail.com</div>
+	</div>
+</div>
+<div class="row justify-content-center">
+	<div class="col-12 col-centered">
+		<img class="fit" src="{{ url_for('static', filename='images/cwrulTeams.jpg') }}" />
+	</div>
+</div>
+
+{% endblock %}

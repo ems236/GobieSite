@@ -21,3 +21,11 @@ def gum():
 @app.route('/about')
 def about():
 	return render_template("about.html")
+
+@app.route('/cwrul')
+def cwrul():
+	return render_template("cwrul.html")
+
+@app.route('/northcoast')
+def northcoast():
+	return render_template("northcoast.html")	
