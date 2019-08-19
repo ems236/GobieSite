@@ -33,10 +33,9 @@
 					          Teams
 					        </a>
 					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					          <a class="dropdown-item" href="#">Men's Competitive</a>
-					          <a class="dropdown-item" href="#">Women's Competitive</a>
-					          <a class="dropdown-item" href="#">Men's Developmental</a>
-					          <a class="dropdown-item" href="#">Bighting Fogies</a>
+					          {% for type in types %}
+						          <a class="dropdown-item" href="{{url_for('')}}">Men's Competitive</a>
+					          {% endfor %}
 					        </div>
 					      </div>
 					      <div id="tournaments" class="nav-item dropdown">

@@ -34,8 +34,9 @@ def northcoast():
 @app.route('/team/<type>')
 @app.route('/team/<type>/<int:year>')
 def team(typeShortname, year=None):
-	teamType = TeamType.query
-		.filter(TeamType.shortName = typeShortname)
+	teamType = TeamType \
+		.query \
+		.filter(TeamType.shortName == typeShortname) \
 		.first()
 
 	if(teamType is None):
