@@ -1,3 +1,8 @@
 #!/bin/bash
 
-cp -r  app/static/* /staticweb
+cp -r app/static /srv/www/GobieSite/
+cp -r configuration /srv/www/GobieSite/
+cp -r venv /srv/www/GobieSite/
+cp -r app /srv/www/GobieSite/
+cp -r main.py /srv/www/GobieSite/
+cp -r wsgi.py /srv/www/GobieSite/
