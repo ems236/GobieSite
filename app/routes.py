@@ -1,5 +1,5 @@
 from flask import render_template
-from models import Team, TeamType, Player
+#from models import Team, TeamType, Player
 from app import app
 
 @app.route('/')
