@@ -4,8 +4,8 @@ db = SQLAlchemy()
 
 team_player = db.Table(
 	'team_player',
-	db.Column('teamId', db.Integer, primary_key=True, db.ForeignKey('team.id')),
-	db.Column('playerId', db.Integer, primary_key=True, db.ForeignKey('player.id')),
+	db.Column('teamId', db.Integer, db.ForeignKey('team.id'), primary_key=True),
+	db.Column('playerId', db.Integer, db.ForeignKey('player.id'), primary_key=True),
 	db.Column('nickname', db.String),
 	db.Column('position', db.String),
 	)

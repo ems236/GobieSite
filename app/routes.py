@@ -1,4 +1,5 @@
 from flask import render_template
+from models import Team, TeamType, Player
 from app import app
 
 @app.route('/')
@@ -28,4 +29,8 @@ def cwrul():
 
 @app.route('/northcoast')
 def northcoast():
-	return render_template("northcoast.html")	
+	return render_template("northcoast.html")
+
+@app.route('/test')
+def test():
+	return render_template("test.html")
