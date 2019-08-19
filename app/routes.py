@@ -2,6 +2,11 @@ from flask import render_template, abort
 from app.models import Team, TeamType, Player
 from app import app
 
+#creates data for roster dropdown
+@app.context_processor
+def inject_teamTypes():
+	return dict(types=TeamType.query.all())
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -51,4 +56,4 @@ def team(typeShortname, year=None):
 	if(team is None):
 		return abort(404)
 
-	return render_template("test.html", team=team)
+	return render_template("team.html", team=team)

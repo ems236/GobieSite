@@ -34,7 +34,7 @@
 					        </a>
 					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 					          {% for type in types %}
-						          <a class="dropdown-item" href="{{url_for('')}}">Men's Competitive</a>
+						          <a class="dropdown-item" href="{{url_for('team', type=type.shortName)}}">{{type.name}}</a>
 					          {% endfor %}
 					        </div>
 					      </div>
