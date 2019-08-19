@@ -25,11 +25,11 @@ class Team(db.Model):
 	players = db.relationship("Player", secondary='team_player', lazy='subquery', backref=db.backref('teams', lazy=True))
 
 	def currentOfType(queryTypeId):
-		maxYear = db.session.query(db.func.max(Team.springYear)).filter(Team.typeId == queryTypeId).scalar()
-		return getByTypeYear(queryTypeId, maxYear)
+		maxYear =  db.session.query(db.func.max(Team.springYear)).filter(Team.typeId == queryTypeId).scalar()
+		return Team.getByTypeYear(queryTypeId, maxYear)
 
 	def getByTypeYear(queryTypeId, year):
-		return Team.query.filter(Team.typeId == queryTypeId, Team.springYear == year)
+		return Team.query.filter(Team.typeId == queryTypeId, Team.springYear == year).first()
 
 class Player(db.Model):
 	__tablename__ = 'player'
