@@ -1,5 +1,5 @@
-from flask import render_template
-#from models import Team, TeamType, Player
+from flask import render_template, abort
+from app.models import Team, TeamType, Player
 from app import app
 
 @app.route('/')
@@ -31,6 +31,23 @@ def cwrul():
 def northcoast():
 	return render_template("northcoast.html")
 
-@app.route('/test')
-def test():
-	return render_template("test.html")
+@app.route('/team/<type>')
+@app.route('/team/<type>/<int:year>')
+def team(typeShortname, year=None):
+	teamType = TeamType.query
+		.filter(TeamType.shortName = typeShortname)
+		.first()
+
+	if(teamType is None):
+		return abort(404)
+
+	team = None
+	if(year is None):
+		team = Team.currentOfType(teamType.id)
+	else:
+		team = Team.getByTypeYear(teamType.id, year)
+
+	if(team is None):
+		return abort(404)
+
+	return render_template("test.html", team=team)
