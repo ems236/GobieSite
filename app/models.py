@@ -25,7 +25,7 @@ class Team(db.Model):
 	players = db.relationship("Player", secondary='team_player', lazy='subquery', backref=db.backref('teams', lazy=True))
 
 	def currentOfType(queryTypeId):
-		maxYear = Team.query(db.func.max(Team.springYear)).filter(Team.typeId == queryTypeId).scalar()
+		maxYear = db.session.query(func.max(Team.springYear)).scalar()
 		return getByTypeYear(queryTypeId, maxYear)
 
 	def getByTypeYear(queryTypeId, year):
