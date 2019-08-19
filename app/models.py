@@ -22,7 +22,7 @@ class Team(db.Model):
 	name = db.Column(db.String)
 	imageFileName = db.Column(db.String)
 	springYear = db.Column(db.Integer)
-	type = db.Column(db.Integer, db.ForeignKey('teamType.id'))
+	typeId = db.Column(db.Integer, db.ForeignKey('teamType.id'))
 	players = db.relationship("Player", secondary='team_player', lazy='subquery', backref=db.backref('teams', lazy=True))
 
 class Player(db.Model):
