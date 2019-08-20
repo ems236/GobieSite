@@ -1,12 +1,20 @@
 from app import db
 
-team_player = db.Table(
-	'team_player',
-	db.Column('teamId', db.Integer, db.ForeignKey('team.id'), primary_key=True),
-	db.Column('playerId', db.Integer, db.ForeignKey('player.id'), primary_key=True),
-	db.Column('nickname', db.String),
-	db.Column('position', db.String),
-	)
+class TeamPlayer(db.Model):
+	__tablename__ = 'team_player'
+	teamId = db.Column('teamId', db.Integer, db.ForeignKey('team.id'), primary_key=True)
+	playerId = db.Column('playerId', db.Integer, db.ForeignKey('player.id'), primary_key=True)
+	nickname = db.Column('nickname', db.String)
+	position = db.Column('position', db.String)
+
+#
+#team_player = db.Table(
+#	'team_player',
+#	db.Column('teamId', db.Integer, db.ForeignKey('team.id'), primary_key=True),
+#	db.Column('playerId', db.Integer, db.ForeignKey('player.id'), primary_key=True),
+#	db.Column('nickname', db.String),
+#	db.Column('position', db.String),
+#	)
 
 class TeamType(db.Model):
 	__tablename__ = 'teamType'
@@ -22,7 +30,8 @@ class Team(db.Model):
 	imageFileName = db.Column(db.String)
 	springYear = db.Column(db.Integer)
 	typeId = db.Column(db.Integer, db.ForeignKey('teamType.id'))
-	players = db.relationship("Player", secondary='team_player', lazy='subquery', backref=db.backref('teams', lazy=True))
+	team_players = db.relationship("TeamPlayer", backref="team", lazy=False)
+	#players = db.relationship("Player", secondary='team_player', lazy='subquery', backref=db.backref('teams', lazy=True))
 
 	def currentOfType(queryTypeId):
 		maxYear =  db.session.query(db.func.max(Team.springYear)).filter(Team.typeId == queryTypeId).scalar()
@@ -38,4 +47,4 @@ class Player(db.Model):
 	hometown = db.Column(db.String)
 	gradYear = db.Column(db.String)
 	major = db.Column(db.String)
-
+	team_players = db.relationship("TeamPlayer", backref="player", lazy=False)

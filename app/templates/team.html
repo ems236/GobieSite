@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block tabName -%}
+teams
+{%- endblock %}
+
+{% block content %}
+	<div class="row justify-content-center">
+		<div class="col col-centered">
+			<h5>{{team.name}}</h5>
+			<img src="{{ url_for('static', filename='images/teams/' + team.imageFileName) }}" />
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-2 col-centered">
+		</div>
+		<div class="col-2 col-centered">
+			Name
+		</div>
+		<div class="col-2 col-centered">
+			Hometown
+		</div>
+		<div class="col-2 col-centered">
+			Year
+		</div>
+		<div class="col-2 col-centered">
+			Major
+		</div>
+		<div class="col-2 col-centered">
+			Position
+		</div>
+	</div>
+	
+{% endblock%}
