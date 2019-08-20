@@ -1,5 +1,11 @@
-from flask import render_template
+from flask import render_template, abort
+from app.models import Team, TeamType, Player
 from app import app
+
+#creates data for roster dropdown
+@app.context_processor
+def inject_teamTypes():
+	return dict(types=TeamType.query.all())
 
 @app.route('/')
 @app.route('/index')
@@ -28,4 +34,26 @@ def cwrul():
 
 @app.route('/northcoast')
 def northcoast():
-	return render_template("northcoast.html")	
+	return render_template("northcoast.html")
+
+@app.route('/team/<type>')
+@app.route('/team/<type>/<int:year>')
+def team(typeShortname, year=None):
+	teamType = TeamType \
+		.query \
+		.filter(TeamType.shortName == typeShortname) \
+		.first()
+
+	if(teamType is None):
+		return abort(404)
+
+	team = None
+	if(year is None):
+		team = Team.currentOfType(teamType.id)
+	else:
+		team = Team.getByTypeYear(teamType.id, year)
+
+	if(team is None):
+		return abort(404)
+
+	return render_template("team.html", team=team)
