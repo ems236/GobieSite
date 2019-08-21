@@ -7,6 +7,8 @@ class TeamPlayer(db.Model):
 	nickname = db.Column('nickname', db.String)
 	position = db.Column('position', db.String)
 
+	def printName(self):
+		return self.player.firstname.decode("utf-8") + " \"" + self.nickname.decode("utf-8") + "\" " + self.player.lastname.decode("utf-8")
 #
 #team_player = db.Table(
 #	'team_player',
@@ -43,8 +45,9 @@ class Team(db.Model):
 class Player(db.Model):
 	__tablename__ = 'player'
 	id = db.Column(db.Integer, primary_key=True)
-	name = db.Column(db.String)
+	firstname = db.Column(db.String)
 	hometown = db.Column(db.String)
 	gradYear = db.Column(db.String)
 	major = db.Column(db.String)
+	lastname = db.Column(db.String)
 	team_players = db.relationship("TeamPlayer", backref="player", lazy=False)

@@ -8,7 +8,7 @@ teams
 	<div class="row justify-content-center">
 		<div class="col col-centered">
 			<h5>{{team.name}}</h5>
-			<img src="{{ url_for('static', filename='images/teams/' + team.imageFileName) }}" />
+			<img src="{{ url_for('static', filename='images/teams/' + team.imageFileName.decode('utf8')) }}" />
 		</div>
 	</div>
 	<div class="row">
@@ -38,7 +38,7 @@ teams
 
 					</div>
 					<div class="col-2 col-centered">
-						{{teamplayer.player.name}}
+						{{teamplayer.printName()}}
 					</div>
 					<div class="col-2 col-centered">
 						{{teamplayer.player.hometown}}

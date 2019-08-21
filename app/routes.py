@@ -36,12 +36,12 @@ def cwrul():
 def northcoast():
 	return render_template("northcoast.html")
 
-@app.route('/team/<type>')
-@app.route('/team/<type>/<int:year>')
-def team(typeShortname, year=None):
+@app.route('/team/<typeShortName>')
+@app.route('/team/<typeShortName>/<int:year>')
+def team(typeShortName, year=None):
 	teamType = TeamType \
 		.query \
-		.filter(TeamType.shortName == typeShortname) \
+		.filter(TeamType.shortName == typeShortName) \
 		.first()
 
 	if(teamType is None):
