@@ -56,3 +56,17 @@ body{
 	padding-left: 0px !important;
 	padding-right: 0px !important;
 }
+
+.table-head{
+	color: white;
+	background-color: #2577fa;
+}
+
+.table-body div{
+	border: 1px solid #bbbbbb;
+	border-radius: 5px;
+}
+
+.table-body:nth-child(even){
+	background-color: #f2f2f2
+}
