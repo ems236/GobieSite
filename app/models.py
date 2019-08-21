@@ -9,14 +9,6 @@ class TeamPlayer(db.Model):
 
 	def printName(self):
 		return self.player.firstname.decode("utf-8") + " \"" + self.nickname.decode("utf-8") + "\" " + self.player.lastname.decode("utf-8")
-#
-#team_player = db.Table(
-#	'team_player',
-#	db.Column('teamId', db.Integer, db.ForeignKey('team.id'), primary_key=True),
-#	db.Column('playerId', db.Integer, db.ForeignKey('player.id'), primary_key=True),
-#	db.Column('nickname', db.String),
-#	db.Column('position', db.String),
-#	)
 
 class TeamType(db.Model):
 	__tablename__ = 'teamType'
@@ -33,7 +25,6 @@ class Team(db.Model):
 	springYear = db.Column(db.Integer)
 	typeId = db.Column(db.Integer, db.ForeignKey('teamType.id'))
 	team_players = db.relationship("TeamPlayer", backref="team", lazy=False)
-	#players = db.relationship("Player", secondary='team_player', lazy='subquery', backref=db.backref('teams', lazy=True))
 
 	def currentOfType(queryTypeId):
 		maxYear =  db.session.query(db.func.max(Team.springYear)).filter(Team.typeId == queryTypeId).scalar()
