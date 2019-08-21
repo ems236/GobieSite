@@ -41,4 +41,5 @@ class Player(db.Model):
 	gradYear = db.Column(db.String)
 	major = db.Column(db.String)
 	lastname = db.Column(db.String)
+	imageFileName = db.Column(db.String)
 	team_players = db.relationship("TeamPlayer", backref="player", lazy=False)

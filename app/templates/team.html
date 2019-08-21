@@ -7,7 +7,7 @@ teams
 {% block content %}
 	<div class="row justify-content-center">
 		<div class="col col-centered">
-			<h5>{{team.name}}</h5>
+			<h2>{{team.name.decode("utf-8")}}</h2>
 			<img src="{{ url_for('static', filename='images/teams/' + team.imageFileName.decode('utf8')) }}" />
 		</div>
 	</div>
@@ -35,22 +35,22 @@ teams
 			{%for teamplayer in team.team_players%}
 				<div class="row table-body">
 					<div class="col-2 col-centered">
-
+						<img src="{{ url_for('static', filename='images/players/' + teamplayer.player.imageFileName.decode('utf8')) }}" />
 					</div>
 					<div class="col-2 col-centered">
 						{{teamplayer.printName()}}
 					</div>
 					<div class="col-2 col-centered">
-						{{teamplayer.player.hometown}}
+						{{teamplayer.player.hometown.decode("utf-8")}}
 					</div>
 					<div class="col-2 col-centered">
-						{{teamplayer.player.gradYear}}
+						{{teamplayer.player.gradYear.decode("utf-8")}}
 					</div>
 					<div class="col-2 col-centered">
-						{{teamplayer.player.major}}
+						{{teamplayer.player.major.decode("utf-8")}}
 					</div>
 					<div class="col-2 col-centered">
-						{{teamplayer.position}}
+						{{teamplayer.position.decode("utf-8")}}
 					</div>
 				</div>
 			{%endfor%}
