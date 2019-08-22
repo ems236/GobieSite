@@ -9,8 +9,8 @@ social
 {%- endblock %}
 
 {% block content %}
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
+{#<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>#}
 
 <div class="row">
 	<div class="col-12">
@@ -18,29 +18,64 @@ social
 		<span>The Gobies can be found all over the web, and keeping track of everything can be exhausting. In order to satisfy your craving for Fighting Gobies, while keeping your life easy, we've compiled all of our social media onto one page. </span>
 	</div>
 </div>
+<div class="row justify-content-center">
+	<div class="col-12 col-centered">
+		<h4>Links</h4>
+	</div>
+	<div class="w-100"></div>
+	<div class="col col-centered">
+		<strong>Facebook</strong>
+		<span><a href="https://www.facebook.com/GobyWarriors/">CWRU Fighting Gobies</a></span>
+	</div>
+	<div class="w-100"></div>
+	<div class="col col-centered">
+		<strong>Instagram</strong>
+		<span><a href="https://www.instagram.com/cwru_fightinggobies/?hl=en">@cwru_fightinggobies</a></span>
+	</div>
+	<div class="w-100"></div>
+	<div class="col col-centered">
+		<strong>Youtube</strong>
+		<span><a href="https://www.youtube.com/channel/UCytbNOFHFoZ6PYzGd5yqMZg">CWRU Fighting Gobies</a></span>
+	</div>
+	<div class="w-100"></div>
+	<div class="col col-centered">
+		<strong>Club Twitter</strong>
+		<span><a href="https://twitter.com/FightingGobies">@FightingGobies</a></span>
+	</div>
+	<div class="w-100"></div>
+	<div class="col col-centered">
+		<strong>Men's Twitter</strong>
+		<span><a href="https://twitter.com/fightinggobiesm?lang=en">@FightingGobiesM</a></span>
+	</div>
+	<div class="w-100"></div>
+	<div class="col col-centered">
+		<strong>Women's Twitter</strong>
+		<span><a href="https://twitter.com/FightingGobiesw">@FightingGobiesW</a></span>
+	</div>
+</div>
 <hr>
 <div class="row">
-	<div class="col-6">
+	<div class="col-12 col-md-6">
 		{# As far as I can tell you can't set this to a max height or anything.  Twitter scales the size really poorly on it's own, so just let it be big #}
 		<h4>Men's Twitter</h4>
 		<a class="twitter-timeline" data-height="700" href="https://twitter.com/FightingGobiesM?ref_src=twsrc%5Etfw">Tweets by FightingGobiesM</a> 
 
 	</div>
-	<div class="col-6">
+	<div class="col-12 col-md-6">
 		<h4>Women's Twitter</h4>
 		<a class="twitter-timeline" data-height="700" href="https://twitter.com/FightingGobiesW?ref_src=twsrc%5Etfw">Tweets by FightingGobiesW</a>
 	</div>
 </div>
 <hr>
-<div class="row">
-	<div class="col-6 col-centered">
+<div class="row justify-content-center">
+	{# Embedding a facebook feed is bad and I don't think it's worth it
+	<div class="col-12 col-md-6 col-centered">	 
 		<h4 class="left">Facebook</h4>
 		<div class="fb-page" data-href="https://www.facebook.com/GobyWarriors/" data-tabs="timeline" data-height="700" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/GobyWarriors/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GobyWarriors/">CWRU Fighting Gobies Ultimate Frisbee</a></blockquote></div>
-	</div>
-	<div class="col-6">
+	</div> #}
+	<div class="col-12 col-md-6">
 		<h4>Club Twitter</h4>
 		<a class="twitter-timeline" data-height="700" href="https://twitter.com/FightingGobies?ref_src=twsrc%5Etfw">Tweets by FightingGobies</a>
 	</div>
 </div>
-
 {% endblock %}
