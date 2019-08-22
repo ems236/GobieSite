@@ -70,3 +70,11 @@ body{
 .table-body:nth-child(even){
 	background-color: #f2f2f2
 }
+
+.video-container iframe{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: auto;
+}
