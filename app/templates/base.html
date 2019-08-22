@@ -24,35 +24,38 @@
 			<div class="row justify-content-center">
 				<div class="col-xl-11 col-12 no-padding">
 					<nav class="navbar navbar-expand-lg navbar-light">
-					  <a class="navbar-brand" href="#"><img id="navImg" src="{{ url_for('static', filename='images/navLogo.png') }}" /></a>
-					  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-					    <div class="navbar-nav">
-					      <a id="home" class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
-					      <div id="teams" class="nav-item dropdown">
-					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					          Teams
-					        </a>
-					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					          {% for type in types %}
-						          <a class="dropdown-item" href="{{url_for('team', typeShortName=type.shortName)}}">{{type.name.decode('utf-8')}}</a>
-					          {% endfor %}
-					        </div>
-					      </div>
-					      <div id="tournaments" class="nav-item dropdown">
-					        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					          Our Tournaments
-					        </a>
-					        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					          <a class="dropdown-item" href="{{ url_for('cwrul') }}">CWRUL</a>
-					          <a class="dropdown-item" href="{{ url_for('northcoast') }}">North Coast</a>
-					        </div>
-					      </div>
-					      <a id="gum" class="nav-item nav-link" href="{{ url_for('gum') }}">GUM</a>
-					      <a id="social" class="nav-item nav-link" href="{{ url_for('social') }}">Social Media</a>
-					      <a id="calendar" class="nav-item nav-link" href="{{ url_for('calendar') }}">Calendar</a>
-					      <a id="about/contact" class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
-					    </div>
-					  </div>
+					  	<a class="navbar-brand" href="{{ url_for('index') }}"><img id="navImg" src="{{ url_for('static', filename='images/navLogo.png') }}" /></a>
+					  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>	
+					  	</button>
+					  	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					    	<div class="navbar-nav">
+					      		<a id="home" class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+					      		<div id="teams" class="nav-item dropdown">
+					        		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					          			Teams
+					        		</a>
+					        		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							          	{% for type in types %}
+							        	  	<a class="dropdown-item" href="{{url_for('team', typeShortName=type.shortName)}}">{{type.name.decode('utf-8')}}</a>
+							          	{% endfor %}
+							        </div>
+					      		</div>
+						      	<div id="tournaments" class="nav-item dropdown">
+						        	<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						          		Our Tournaments
+						        	</a>
+						        	<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						          		<a class="dropdown-item" href="{{ url_for('cwrul') }}">CWRUL</a>
+						          		<a class="dropdown-item" href="{{ url_for('northcoast') }}">North Coast</a>
+					        		</div>
+						      	</div>
+						      	<a id="gum" class="nav-item nav-link" href="{{ url_for('gum') }}">GUM</a>
+						      	<a id="social" class="nav-item nav-link" href="{{ url_for('social') }}">Social Media</a>
+						      	<a id="calendar" class="nav-item nav-link" href="{{ url_for('calendar') }}">Calendar</a>
+						      	<a id="about/contact" class="nav-item nav-link" href="{{ url_for('about') }}">About</a>
+					    	</div>
+					  	</div>
 					</nav>
 				</div>
 			</div>
