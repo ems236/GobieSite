@@ -1,8 +1,8 @@
 #!/bin/bash
 
-cp -r app/static /srv/www/GobieSite/
-cp -r configuration /srv/www/GobieSite/
-cp -r venv /srv/www/GobieSite/
-cp -r app /srv/www/GobieSite/
-cp -r main.py /srv/www/GobieSite/
-cp -r wsgi.py /srv/www/GobieSite/
+cp -r app/static /srv/www/GobySite/
+cp -r configuration /srv/www/GobySite/
+cp -r venv /srv/www/GobySite/
+cp -r app /srv/www/GobySite/
+cp -r main.py /srv/www/GobySite/
+cp -r wsgi.py /srv/www/GobySite/
