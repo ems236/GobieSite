@@ -6,3 +6,5 @@ cp -r venv /srv/www/GobySite/
 cp -r app /srv/www/GobySite/
 cp -r main.py /srv/www/GobySite/
 cp -r wsgi.py /srv/www/GobySite/
+chgrp -R www-data /srv/www/GobySite/
+chmod -R g+rw /srv/www/GobySite/
