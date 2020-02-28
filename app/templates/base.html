@@ -37,7 +37,7 @@
 					        		</a>
 					        		<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 							          	{% for type in types %}
-							        	  	<a class="dropdown-item" href="{{url_for('team', typeShortName=type.shortName)}}">{{type.name.decode('utf-8')}}</a>
+							        	  	<a class="dropdown-item" href="{{url_for('team', typeShortName=type.shortName)}}">{{type.name}}</a>
 							          	{% endfor %}
 							        </div>
 					      		</div>
